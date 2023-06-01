@@ -33,7 +33,7 @@ def main():
     }
     
     active_tab = st.sidebar.radio(" ", list(tabs.keys()))
-    tabs[active_tab]()  # Call the selected tab function
+    # tabs[active_tab]()  # Call the selected tab function
 
     col1, col2 = st.beta_columns([1, 4])
 
