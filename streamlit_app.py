@@ -32,14 +32,14 @@ def main():
         "The Dream Team": tab5
     }
     
-    active_tab = st.sidebar.radio(" ", list(tabs.keys()))
+    active_tab = st.sidebar.radio(" ", list(tabs.keys()), index=0, key="sidebar-radio")
 
     # Create columns for layout
     col1, col2 = st.columns([1, 4])
     
     # Place the tab directory in the first column
     col1.title("Directory")
-    active_tab = col1.radio(" ", list(tabs.keys()), index=list(tabs.keys()).index(active_tab))
+    active_tab = col1.radio(" ", list(tabs.keys()), index=list(tabs.keys()).index(active_tab), key="col1-radio")
     
     # Place the HTML content in the second column
     col2.title(active_tab)
