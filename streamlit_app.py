@@ -14,11 +14,11 @@ def tab3():
 
 def tab4():
     st.title("Graphs")
-    st.components.v1.html(open("graphs.HTML", 'r').read(), width=1000, height=10000)
+    st.components.v1.html(open("graphs.HTML", 'r').read(),width=1000, height=10000)
 
 def tab5():
     st.title("The Dream Team")
-    st.components.v1.html(open("team.html", 'r').read(), width=1000, height=10000)
+    st.components.v1.html(open("team.html", 'r').read(),width=1000, height=10000)
 
 # Main app
 def main():
@@ -32,14 +32,7 @@ def main():
         "The Dream Team": tab5
     }
     
-    active_tab = st.sidebar.radio("Select a tab", list(tabs.keys()))
-
-    # Place the tab directory in the sidebar
-    st.sidebar.title("Directory")
-    active_tab = st.sidebar.radio(" ", list(tabs.keys()), index=list(tabs.keys()).index(active_tab))
-
-    # Display the HTML content
-    st.title(active_tab)
+    active_tab = st.sidebar.radio(" ", list(tabs.keys()))
     tabs[active_tab]()  # Call the selected tab function
 
 if __name__ == "__main__":
