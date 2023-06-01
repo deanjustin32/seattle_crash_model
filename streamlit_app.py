@@ -1,10 +1,9 @@
-from flask import Flask
+import streamlit as st
+from streamlit import components
 
-app = Flask(__name__)
+# Read the HTML file content
+with open("../static/base.HTML", "r") as file:
+    html_content = file.read()
 
-@app.route('/')
-def home():
-    return app.send_static_file('base.html')
-
-if __name__ == '__main__':
-    app.run()
+# Render the HTML content using Streamlit
+st.components.v1.html(html_content)
