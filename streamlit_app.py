@@ -15,4 +15,4 @@ st.markdown(
 )
 
 # Render the HTML content using Streamlit
-st.components.v1.html(html_content, height=800, width=1500, scrolling=True)
+# st.components.v1.html(html_content, height=800, width=1500, scrolling=True)
