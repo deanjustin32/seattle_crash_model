@@ -2,7 +2,7 @@ import streamlit as st
 
 def tab1():
     st.title("Home")
-    st.components.v1.html(open("base.HTML", 'r').read(), width=800, height=800, scrolling = True )
+    st.components.v1.html(open("base.HTML", 'r').read(), width=800, height=1000, scrolling = True )
 
 def tab2():
     st.title("Prediction Tool")
