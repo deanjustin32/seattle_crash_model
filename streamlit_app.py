@@ -2,28 +2,23 @@ import streamlit as st
 
 def tab1():
     st.title("Home")
-    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
-    st.components.v1.html(open("base.HTML", 'r').read())
+    st.components.v1.iframe(src="base.HTML", width=800, height=600, scrolling=True)
 
 def tab2():
     st.title("Prediction Tool")
-    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
-    st.components.v1.html(open("tool.HTML", 'r').read())
+    st.components.v1.iframe(src="tool.HTML", width=800, height=600, scrolling=True)
 
 def tab3():
     st.title("Map")
-    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
-    st.components.v1.html(open("map.html", 'r').read())
+    st.components.v1.iframe(src="map.html", width=800, height=600, srolling=True)
 
 def tab4():
     st.title("Graphs")
-    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
-    st.components.v1.html(open("graphs.HTML", 'r').read())
+    st.components.v1.iframe(src="graphs.HTML", width=800, height=600, scrolling=True)
 
 def tab5():
     st.title("The Dream Team")
-    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
-    st.components.v1.html(open("team.html", 'r').read())
+    st.components.v1.iframe(src="team.html", width=800, height=600, scrolling=True)
 
 # Main app
 def main():
