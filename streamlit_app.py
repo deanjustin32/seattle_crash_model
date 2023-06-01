@@ -1,38 +1,38 @@
 import streamlit as st
 
 def tab1():
-    st.title("Tab 1")
-    st.components.v1.html(open("./static/base.html", 'r').read())
+    st.title("Home")
+    st.components.v1.html(open("static/base.html", 'r').read())
 
 def tab2():
-    st.title("Tab 2")
-    st.components.v1.html(open("./static/tool.html", 'r').read())
+    st.title("Prediction Tool")
+    st.components.v1.html(open("static/tool.html", 'r').read())
 
 def tab3():
-    st.title("Tab 3")
-    st.components.v1.html(open("./static/map.html", 'r').read())
+    st.title("Map")
+    st.components.v1.html(open("static/map.html", 'r').read())
 
 def tab4():
-    st.title("Tab 4")
-    st.components.v1.html(open("./static/graphs.html", 'r').read())
+    st.title("Graphs")
+    st.components.v1.html(open("static/graphs.html", 'r').read())
 
 def tab5():
-    st.title("Tab 5")
-    st.components.v1.html(open("team.html", 'r').read())
+    st.title("The Dream Team")
+    st.components.v1.html(open("static/team.html", 'r').read())
 
 # Main app
 def main():
-    st.sidebar.title("HTML Tabs")
+    st.sidebar.title("Directory")
     
     tabs = {
         "Home": tab1,
         "Prediction Tool": tab2,
         "Map": tab3,
         "Graphs": tab4,
-        "Team": tab5
+        "The Dream Team": tab5
     }
     
-    active_tab = st.sidebar.radio("Select Tab", list(tabs.keys()))
+    active_tab = st.sidebar.radio(" ", list(tabs.keys()))
     tabs[active_tab]()  # Call the selected tab function
 
 if __name__ == "__main__":
