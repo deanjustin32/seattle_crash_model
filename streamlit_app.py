@@ -35,7 +35,10 @@ def main():
     active_tab = st.sidebar.radio(" ", list(tabs.keys()))
     # tabs[active_tab]()  # Call the selected tab function
 
-    col1, col2 = st.beta_columns([1, 4])
+    st.sidebar.title("Directory")
+    active_tab = st.sidebar.radio(" ", list(tabs.keys()), index=list(tabs.keys()).index(active_tab))
+
+    col1, col2 = st.columns([1, 4])
 
     # Place the HTML content in the second column
     with col2:
