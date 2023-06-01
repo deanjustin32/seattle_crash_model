@@ -2,23 +2,28 @@ import streamlit as st
 
 def tab1():
     st.title("Home")
+    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
     st.components.v1.html(open("base.HTML", 'r').read())
 
 def tab2():
     st.title("Prediction Tool")
+    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
     st.components.v1.html(open("tool.HTML", 'r').read())
 
 def tab3():
     st.title("Map")
-    st.components.v1.html(open("map.HTML", 'r').read())
+    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
+    st.components.v1.html(open("map.html", 'r').read())
 
 def tab4():
     st.title("Graphs")
+    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
     st.components.v1.html(open("graphs.HTML", 'r').read())
 
 def tab5():
     st.title("The Dream Team")
-    st.components.v1.html(open("team.HTML", 'r').read())
+    st.markdown('<style>div[role="main"] .css-1aumxhk{ width: 800px; height: 600px; }</style>', unsafe_allow_html=True)
+    st.components.v1.html(open("team.html", 'r').read())
 
 # Main app
 def main():
