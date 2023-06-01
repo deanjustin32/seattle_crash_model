@@ -2,23 +2,33 @@ import streamlit as st
 
 def tab1():
     st.title("Home")
-    st.components.v1.iframe(src="base.HTML", width=800, height=600, scrolling=True)
+    with open("base.HTML", 'r') as file:
+        html_code = file.read()
+    st.markdown(html_code, unsafe_allow_html=True)
 
 def tab2():
     st.title("Prediction Tool")
-    st.components.v1.iframe(src="tool.HTML", width=800, height=600, scrolling=True)
+    with open("tool.HTML", 'r') as file:
+        html_code = file.read()
+    st.markdown(html_code, unsafe_allow_html=True)
 
 def tab3():
     st.title("Map")
-    st.components.v1.iframe(src="map.html", width=800, height=600, srolling=True)
+    with open("map.html", 'r') as file:
+        html_code = file.read()
+    st.markdown(html_code, unsafe_allow_html=True)
 
 def tab4():
     st.title("Graphs")
-    st.components.v1.iframe(src="graphs.HTML", width=800, height=600, scrolling=True)
+    with open("graphs.HTML", 'r') as file:
+        html_code = file.read()
+    st.markdown(html_code, unsafe_allow_html=True)
 
 def tab5():
     st.title("The Dream Team")
-    st.components.v1.iframe(src="team.html", width=800, height=600, scrolling=True)
+    with open("team.html", 'r') as file:
+        html_code = file.read()
+    st.markdown(html_code, unsafe_allow_html=True)
 
 # Main app
 def main():
