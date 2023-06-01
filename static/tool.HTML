@@ -20,7 +20,8 @@
       integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css" />
+   
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
         body {
@@ -66,13 +67,61 @@
           width: 20px;
           height: 20px;
           border-radius: 50%;
-          border: 2px solid #ff3030;
+          border: 2px solid #000000;
           outline: none;
         }
     
         input[type="radio"]:checked {
-          background-color: #000;
+          background-color: #003cff;
         }
+
+        form {
+    background-color: #4ebdd100;
+    border-radius: 10px;
+    font-family: Arial;
+    padding: 20px;
+    width: 200px;
+  }
+  
+  #form-prompt {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  button { margin-top: 10px; }
+  
+  button:hover, input:hover, label:hover { cursor: pointer; }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  /* Style radio buttons on hover */
+  input[type="radio"]:hover {
+    border-color: #555;
+  }
+  
+  /* Style radio buttons when checked */
+  input[type="radio"]:checked {
+    background-color: #0d30f8;
+  }
+  
+  /* Style radio button labels */
+  label {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+  }
       </style>
 
     
@@ -96,11 +145,11 @@
           <div class="col s12">
             <!-- Tabs -->
             <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
-              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/base.HTML">Home</a></li>
-              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/tool.HTML">Prediction Tool</a></li>
-              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/map.html">Map</a></li>
-              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/graphs.HTML">Graphs</a></li>
-              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/team.html">Team</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../Project_4/base.HTML">Home</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../UCD_Bootcamp/Project_4/tool.HTML">Prediction Tool</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../Project_4/map.html">Map</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../Project_4/graphs.HTML">Graphs</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../Project_4/team.html">People</a></li>
             </ul>
           </div>
         </div>
@@ -120,16 +169,26 @@
     <h1>Survivability Prediction Tool</h1>
     <h3>This tool is powered by Machine Learning</h3>
 
-    <form id="form">
-        <p id=form-prompt>How old are you?</p>
-        <input type="radio" id="child" name="age" value="child">
-        <label for="child">17 years or younger</label><br>
-        <input type="radio" id="adult" name="age" value="adult">
-        <label for="adult">18 - 64 years</label><br>
-        <input type="radio" id="senior" name="age" value="senior">
-        <label for="senior">65 years or older</label>
-        
-        <div><button type="submit">Submit</button></div>
+    <form>
+        <label for="question1">Question 1:</label><br>
+        <input type="radio" id="option1" name="question1" value="option1">
+        <label for="option1">Option 1</label><br>
+        <input type="radio" id="option2" name="question1" value="option2">
+        <label for="option2">Option 2</label><br>
+        <input type="radio" id="option3" name="question1" value="option3">
+        <label for="option3">Option 3</label><br>
+      
+        <label for="question2">Question 2:</label><br>
+        <input type="radio" id="option4" name="question2" value="option4">
+        <label for="option4">Option 4</label><br>
+        <input type="radio" id="option5" name="question2" value="option5">
+        <label for="option5">Option 5</label><br>
+        <input type="radio" id="option6" name="question2" value="option6">
+        <label for="option6">Option 6</label><br>
+      
+        <!-- Add more radio button questions here -->
+      
+        <input type="submit" value="Submit">
       </form>
   </div>
 </body>
