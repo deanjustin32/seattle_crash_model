@@ -1,0 +1,17 @@
+form {
+    background-color: #e5f5f8;
+    border-radius: 10px;
+    font-family: Arial;
+    padding: 20px;
+    width: 200px;
+  }
+  
+  #form-prompt {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  button { margin-top: 10px; }
+  
+  button:hover, input:hover, label:hover { cursor: pointer; }

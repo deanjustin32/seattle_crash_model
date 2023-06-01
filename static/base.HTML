@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seattle Crash Assessment</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        body {
+          background-color: #ffffff;
+        }
+  
+        .jumbotron {
+          background: #6615d100 linear-gradient(#4a97df, #ccf7ff);
+          background-size: 100% 100%;
+          overflow: auto;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+    </style>
+
+<style>
+    .container {
+      background-color: #ccf7ff;
+    }
+  </style>
+
+  </head>
+
+  <body>
+    <!--Jumbotron and GIF-->
+    <div class="container">
+        <div class="jumbotron" style="text-align: center;">
+            <h1 style="font-size: 40px; color: white; font-family: Gill Sans, sans-serif;" > Probability of Crash Survival in Seattle, WA.</h1>
+          <div style="max-width: 600px; margin: 0 auto;">
+            <img src="https://marvel-b1-cdn.bc0a.com/f00000000103807/www.cityyear.org/wp-content/uploads/2020/04/cityscapesCYFullNewColors_SeattleCityscape.png" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+
+    <!--Tabs on the website using materialize-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <div class="container">
+        <div class="row">
+          <div class="col s12">
+            
+            <!-- Tabs -->
+            <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/base.HTML">Home</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/tool.HTML">Prediction Tool</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/map.html">Map</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/graphs.HTML">Graphs</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/team.html">Team</a></li>
+            </ul>
+        </div>
+    </div>
+
+  <!--Introduction Paragraphs-->
+  <div>
+    <h1>Introduction</h1>
+    <p> 
+      <p id="myParagraph" class="intro-text" style="font-size: 18px;">When considering  transportation safety, predicting the likelihood of survival from vehicle crashes has emerged as a crucial area of research and development. With an ever-increasing number of vehicles on the road and the inherent risks associated with traffic accidents, understanding the factors that contribute to survival outcomes has become key to increasing vehicle crash survival rates. </p>
+      <p id="myParagraph" class="intro-text" style="font-size: 18px;">By leveraging advancements in data analytics and machine learning we are striving to develop predictive models capable of accurately estimating the probability of survival in various crash scenarios. This promising field not only holds immense potential for improving vehicle safety standards but also offers valuable insights to inform policy decisions, enhance emergency response protocols, and ultimately save countless lives. 
+    </p>
+    </p>
+  </div>
+
+  <h1>Project Background</h1>
+    <p> 
+        <p id="myParagraph" class="intro-text" style="font-size: 18px;"> Our group will be developing an app that will predict the degree of injury based on the conditions of crashes in Seattle, Washington. This app will ask users a series of questions that will lead the app to a conclusion of the most likely outcome of injury severity. By gathering essential information such as the type of collision, vehicle speed, and location, our app will allow users to gain insights on potential injury risks. Our project aims to bridge the gap between transportation safety, user-friendly application, and promoting safer experiences on the road. </p>
+    </p>
+
+    <h1>Data</h1>
+    <p> 
+        <p id="myParagraph" class="intro-text" style="font-size: 18px;"> Seattle SDOT Collisions Data: https://www.kaggle.com/datasets/jonleon/seattle-sdot-collisions-data</p>
+    </p>
+    
+    <h1>Resources</h1>
+    
+
+</div>
+</body>
+</html>
+
