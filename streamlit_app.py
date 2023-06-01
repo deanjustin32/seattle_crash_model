@@ -32,8 +32,17 @@ def main():
         "The Dream Team": tab5
     }
     
-    active_tab = st.sidebar.radio(" ", list(tabs.keys()))
-    tabs[active_tab]()  # Call the selected tab function
+    # Place the tab directory in the sidebar
+    st.sidebar.title("Directory")
+    active_tab = st.sidebar.radio(" ", list(tabs.keys()), index=list(tabs.keys()).index(active_tab))
+
+    # Create columns for layout
+    col1, col2 = st.beta_columns([1, 4])
+
+    # Place the HTML content in the second column
+    with col2:
+        st.title(active_tab)
+        tabs[active_tab]()  # Call the selected tab function
 
 if __name__ == "__main__":
     main()
