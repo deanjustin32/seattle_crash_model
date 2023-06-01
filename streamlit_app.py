@@ -2,23 +2,23 @@ import streamlit as st
 
 def tab1():
     st.title("Home")
-    st.components.v1.html(open("base.html", 'r').read())
+    st.components.v1.html(open("base.HTML", 'r').read())
 
 def tab2():
     st.title("Prediction Tool")
-    st.components.v1.html(open("tool.html", 'r').read())
+    st.components.v1.html(open("tool.HTML", 'r').read())
 
 def tab3():
     st.title("Map")
-    st.components.v1.html(open("map.html", 'r').read())
+    st.components.v1.html(open("map.HTML", 'r').read())
 
 def tab4():
     st.title("Graphs")
-    st.components.v1.html(open("graphs.html", 'r').read())
+    st.components.v1.html(open("graphs.HTML", 'r').read())
 
 def tab5():
     st.title("The Dream Team")
-    st.components.v1.html(open("team.html", 'r').read())
+    st.components.v1.html(open("team.HTML", 'r').read())
 
 # Main app
 def main():
