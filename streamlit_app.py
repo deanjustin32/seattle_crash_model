@@ -2,33 +2,23 @@ import streamlit as st
 
 def tab1():
     st.title("Home")
-    with open("base.HTML", 'r') as file:
-        html_code = file.read()
-    st.markdown(html_code, unsafe_allow_html=True)
+    st.components.v1.html(open("base.HTML", 'r').read())
 
 def tab2():
     st.title("Prediction Tool")
-    with open("tool.HTML", 'r') as file:
-        html_code = file.read()
-    st.markdown(html_code, unsafe_allow_html=True)
+    st.components.v1.html(open("tool.HTML", 'r').read())
 
 def tab3():
     st.title("Map")
-    with open("map.html", 'r') as file:
-        html_code = file.read()
-    st.markdown(html_code, unsafe_allow_html=True)
+    st.components.v1.html(open("map.html", 'r').read())
 
 def tab4():
     st.title("Graphs")
-    with open("graphs.HTML", 'r') as file:
-        html_code = file.read()
-    st.markdown(html_code, unsafe_allow_html=True)
+    st.components.v1.html(open("graphs.HTML", 'r').read())
 
 def tab5():
     st.title("The Dream Team")
-    with open("team.html", 'r') as file:
-        html_code = file.read()
-    st.markdown(html_code, unsafe_allow_html=True)
+    st.components.v1.html(open("team.html", 'r').read())
 
 # Main app
 def main():
