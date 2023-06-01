@@ -33,10 +33,9 @@ def main():
     }
     
     active_tab = st.sidebar.radio(" ", list(tabs.keys()))
-    # tabs[active_tab]()  # Call the selected tab function
 
-     # Create columns for layout
-    col1, col2 = st.beta_columns([1, 4])
+    # Create columns for layout
+    col1, col2 = st.columns([1, 4])
     
     # Place the tab directory in the first column
     col1.title("Directory")
