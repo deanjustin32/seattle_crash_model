@@ -33,6 +33,17 @@ def main():
     }
     
     active_tab = st.sidebar.radio(" ", list(tabs.keys()))
+    # tabs[active_tab]()  # Call the selected tab function
+
+     # Create columns for layout
+    col1, col2 = st.beta_columns([1, 4])
+    
+    # Place the tab directory in the first column
+    col1.title("Directory")
+    active_tab = col1.radio(" ", list(tabs.keys()), index=list(tabs.keys()).index(active_tab))
+    
+    # Place the HTML content in the second column
+    col2.title(active_tab)
     tabs[active_tab]()  # Call the selected tab function
 
 if __name__ == "__main__":
