@@ -24,6 +24,8 @@ Data used to develope the Machine Learning model and Tableau Public graphs is ho
 The data was accessed from Seattle-sdot-collisions. The data was visualized and story created using Tableau Public to see major contributing factors collision injuries and fatalities. Explore the different visuals and graphs in the Tableau Story linked below. 
 [Tableau Story](https://public.tableau.com/shared/9KKDG6SJD?:display_count=n&:origin=viz_share_link)
 
+![Tableau Story](https://github.com/aharris206/Project_01/blob/Maddy/Images/Drought%20categories.png)
+
 # Resources
 For more background information on the data used for this application see the City of Seattle's Collions-All Year PDF here https://www.seattle.gov/Documents/Departments/SDOT/GIS/Collisions_OD.pdf.
 
