@@ -18,6 +18,7 @@ To explore the Seattle Crash Survival App here:
 Data used to develope the Machine Learning model and Tableau Public graphs is hosted by the City of Seattle. For more information, visit Seattle SDOT Collisions Data here https://www.kaggle.com/datasets/jonleon/seattle-sdot-collisions-data.
 
 # Map
+The map was created by data sourced from Seattle-sdot-collisions and was developed through Tableau Public. It displays collision injuries per vehicle accident that occured in Seattle, WA. The different colored dots represent the number of injuries that occur during an accident. Note that the most common number of injuries per accident is 5 - 7 injuries.
 [Tableau map](https://public.tableau.com/shared/NMB933XG5?:display_count=n&:origin=viz_share_link)
 
 ![Tableau Story](https://github.com/deanjustin32/seattle_crash_model/blob/main/images/Tableau_map.png)
