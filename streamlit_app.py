@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import joblib
 
 def tab1():
     st.title("Home")
@@ -9,7 +10,7 @@ def tab2():
     st.title("Prediction Tool")
 
     with open("xg_model.pickle", "rb") as file:
-        model = pickle.load(file)
+        model = joblib.load(file)
 
     st.write("Enter the required information:")
     feature1 = st.text_input("Feature 1")
