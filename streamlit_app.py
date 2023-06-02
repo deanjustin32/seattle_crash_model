@@ -12,12 +12,16 @@ def tab2():
     with open("xg_model.pickle", "rb") as file:
         model = pickle.load(file)
 
-        st.write("Enter the required information:")
+    st.write("Enter the required information:")
     feature1 = st.text_input("Feature 1")
     feature2 = st.text_input("Feature 2")
     # Add more input fields for your features
 
     if st.button("Predict"):
+        # Process the inputs and make a prediction using the loaded model
+        # prediction = model.predict(...)
+        # Display the prediction result
+        # st.write("Prediction:", prediction)
 
 def tab3():
     st.title("Map")
@@ -25,11 +29,11 @@ def tab3():
 
 def tab4():
     st.title("Graphs")
-    st.components.v1.html(open("graphs.HTML", 'r').read(),width=1300, height=10000)
+    st.components.v1.html(open("graphs.HTML", 'r').read(), width=1300, height=10000)
 
 def tab5():
     st.title("The Dream Team")
-    st.components.v1.html(open("team.html", 'r').read(),width=1000, height=10000)
+    st.components.v1.html(open("team.html", 'r').read(), width=1000, height=10000)
 
 # Main app
 def main():
