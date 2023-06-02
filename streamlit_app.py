@@ -7,14 +7,19 @@ def tab1():
     st.components.v1.html(open("base.HTML", 'r').read(), width=1000, height=10000)
 
 def tab2():
-    st.title("Prediction Tool")
+    st.title("Accident Severity Based on Collision Factors")
 
    
     model = joblib.load('xg_model.pkl')
 
-    st.write("Enter the required information:")
-    feature1 = st.text_input("Feature 1")
+    st.write("Accident Conditions:")
+
+    accident_location = ["Block", "Intersection"]
+
+
+    feature1 = st.text_input("Where did this accident take place?", accident_location)
     feature2 = st.text_input("Feature 2")
+    feature3 = st.text_input("Feature 2")
 
     if st.button("Predict"):
         # Prepare the input features for prediction
