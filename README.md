@@ -17,6 +17,11 @@ To explore the Seattle Crash Survival App here:
 # Data
 Data used to develope the Machine Learning model and Tableau Public graphs is hosted by the City of Seattle. For more information, visit Seattle SDOT Collisions Data here https://www.kaggle.com/datasets/jonleon/seattle-sdot-collisions-data.
 
+# Map
+
+# Tableau Public
+[Tableau Story](https://public.tableau.com/shared/9KKDG6SJD?:display_count=n&:origin=viz_share_link)
+
 # Resources
 For more background information on the data used for this application see the City of Seattle's Collions-All Year PDF here https://www.seattle.gov/Documents/Departments/SDOT/GIS/Collisions_OD.pdf.
 
