@@ -12,7 +12,7 @@ Our group will be developing an app that predicts the degree of injury based on 
 
 Explore the app! Take a look at our Map, which displays crashes and the servirety of these crashes throughout Seattle, WA. View the data through graphs and visualizations to see patterns, powered by Tableau Public. Try out our Crash Survivability Prediction Tool, created using Machine Learning. 
 
-To explore the Seattle Crash Survival App here: 
+## Explore the [Seattle Crash Survival App here](https://seattlecrashmodel.streamlit.app/)
 
 # Data
 Data used to develope the Machine Learning model and Tableau Public graphs is hosted by the City of Seattle. For more information, visit Seattle SDOT Collisions Data here https://www.kaggle.com/datasets/jonleon/seattle-sdot-collisions-data.
