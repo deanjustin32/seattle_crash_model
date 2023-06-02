@@ -7,21 +7,17 @@ def tab1():
 
 def tab2():
     st.title("Prediction Tool")
-
-    # Load the pickled model
+    
     with open("xg_model.pickle", "rb") as file:
         model = pickle.load(file)
 
     st.write("Enter the required information:")
     feature1 = st.text_input("Feature 1")
     feature2 = st.text_input("Feature 2")
-    # Add more input fields for your features
 
     if st.button("Predict"):
-        # Process the inputs and make a prediction using the loaded model
-        # prediction = model.predict(...)
-        # Display the prediction result
-        # st.write("Prediction:", prediction)
+        # Add your prediction logic here
+        pass  # Placeholder for the prediction logic
 
 def tab3():
     st.title("Map")
