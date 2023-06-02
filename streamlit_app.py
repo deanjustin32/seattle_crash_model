@@ -17,7 +17,7 @@ def tab2():
     accident_location = ["Block", "Intersection"]
 
 
-    feature1 = st.text_input("Where did this accident take place?", accident_location)
+    feature1 = st.selectbox("Where did this accident take place?", accident_location)
     feature2 = st.text_input("Feature 2")
     feature3 = st.text_input("Feature 2")
 
