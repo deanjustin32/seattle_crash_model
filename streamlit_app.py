@@ -9,8 +9,8 @@ def tab1():
 def tab2():
     st.title("Prediction Tool")
 
-    with open("xg_model.pickle", "rb") as file:
-        model = joblib.load(file)
+   
+    model = joblib.load('xg_model.pickle')
 
     st.write("Enter the required information:")
     feature1 = st.text_input("Feature 1")
