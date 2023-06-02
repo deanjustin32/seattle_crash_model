@@ -1,4 +1,5 @@
 import streamlit as st
+import pickle
 
 def tab1():
     st.title("Home")
@@ -6,7 +7,17 @@ def tab1():
 
 def tab2():
     st.title("Prediction Tool")
-    st.components.v1.html(open("tool.HTML", 'r').read(), width=1000, height=10000)
+
+    # Load the pickled model
+    with open("xg_model.pickle", "rb") as file:
+        model = pickle.load(file)
+
+        st.write("Enter the required information:")
+    feature1 = st.text_input("Feature 1")
+    feature2 = st.text_input("Feature 2")
+    # Add more input fields for your features
+
+    if st.button("Predict"):
 
 def tab3():
     st.title("Map")
