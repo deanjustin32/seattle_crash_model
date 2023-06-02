@@ -10,7 +10,7 @@ def tab2():
     st.title("Prediction Tool")
 
    
-    model = joblib.load('xg_model.pickle')
+    model = joblib.load('xg_model.pkl')
 
     st.write("Enter the required information:")
     feature1 = st.text_input("Feature 1")
