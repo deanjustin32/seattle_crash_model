@@ -39,6 +39,8 @@ def tab2():
 
     weather = ['Clear', 'Raining', 'Overcast', 'Unknown', 'Snowing', 'Other', 'Fog/Smog/Smoke', 'Sleet/Hail/Freezing Rain',
                'Blowing Sand/Dirt', 'Severe Crosswind', 'Partly Cloudy', 'Blowing Snow']
+    
+    
 
     feature1 = st.selectbox("Block or Intersection?", block_or_intersection)
     feature2 = st.selectbox("What was the collision type?", collision_type)
@@ -49,15 +51,16 @@ def tab2():
     feature7 = st.number_input("How many people were involved?", value=0, step=1)
     feature8 = st.selectbox("What were the road conditions?", road_conditions)
     feature9 = st.selectbox("Which of these options fits your condition the best?", crash_conditions)
-    feature10 = st.selectbox("Was anyone under the influence at the time of the accident?", yes_no)
-    feature11 = st.number_input("How many vehicles were involved?", value=0, step=1)
-    feature12 = st.selectbox("What was the weather at the time of the accident?", weather)
-    feature13 = st.selectbox("Was a parked car hit during this accident?", yes_no)
+    feature10 = st.number_input("How many people were involved?", value=0, step=1)
+    feature11 = st.selectbox("Was anyone under the influence at the time of the accident?", yes_no)
+    feature12 = st.number_input("How many vehicles were involved?", value=0, step=1)
+    feature13 = st.selectbox("What was the weather at the time of the accident?", weather)
+    feature14 = st.selectbox("Was a parked car hit during this accident?", yes_no)
 
 
     if st.button("Predict"):
         # Prepare the input features for prediction
-        input_features = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11, feature12, feature13]
+        input_features = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11, feature12, feature13, feature14]
         
         # Perform prediction using the loaded model
         prediction = model.predict([input_features])[0]
