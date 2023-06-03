@@ -51,7 +51,7 @@ def tab2():
     feature7 = st.number_input("How many people were involved?", value=0, step=1)
     feature8 = st.selectbox("What were the road conditions?", road_conditions)
     feature9 = st.selectbox("Which of these options fits your condition the best?", crash_conditions)
-    feature10 = st.number_input("How many people were involved?", value=0, step=1)
+    feature10 = st.number_input("Crash severity (PLACE HOLDER)?", value=0, step=1)
     feature11 = st.selectbox("Was anyone under the influence at the time of the accident?", yes_no)
     feature12 = st.number_input("How many vehicles were involved?", value=0, step=1)
     feature13 = st.selectbox("What was the weather at the time of the accident?", weather)
