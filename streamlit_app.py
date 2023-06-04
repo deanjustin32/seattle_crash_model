@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+# import pickle
 import joblib
 
 def tab1():
