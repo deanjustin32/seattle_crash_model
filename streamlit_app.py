@@ -146,7 +146,7 @@ def tab2():
         if feature4 == ('Other'): 
             empty_df['Light_Conditions_Other']=empty_df['Light_Conditions_Other'].replace(0,1)
 
-        empty_df['Pedestrian_Count'] = empty_df['Pedestrian_Count'].replace(empty_df['Pedestrian_count'], feature5)
+        empty_df['Pedestrian_Count'] = empty_df['Pedestrian_Count'].replace(empty_df['Pedestrian_Count'], feature5)
 
         empty_df['Cyclist_Count'] = empty_df['Cyclist_Count'].replace(empty_df['Cyclist_Count'], feature6)
 
