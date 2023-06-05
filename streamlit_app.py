@@ -1,6 +1,7 @@
 import streamlit as st
-# import pickle
+import pickle
 import joblib
+import pandas as pd
 
 def tab1():
     st.title("Home")
@@ -9,8 +10,8 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
-   
-    model = joblib.load('xg_model.pkl')
+    empty_df = pd.read_pickle("empty_df.pkl")
+    model = pickle.load(open("xg_model.pkl", 'rb'))
 
     st.write("Accident Conditions:")
 
@@ -24,7 +25,7 @@ def tab2():
     
     light_conditions = ['Daylight', 'Dark', 'Dusk', 'Dawn', 'Unknown', 'Other']
 
-    road_conditions = ['Wet', 'Dry', 'Icy', 'Unknown']
+    road_conditions = ['Wet', 'Dry', 'Icy', 'Oil', 'Other', 'Sand/Mud/Dirt', 'Snow/Slush', 'Standing Water', 'Unknown']
 
     crash_conditions = ['MOTOR VEHICLE STRUCK MOTOR VEHICLE', 'MOTOR VEHICLE RAN OFF ROAD', 'MOTOR VEHICLE STRUCK PEDESTRIAN',
                         'NOT ENOUGH INFORMATION / NOT APPLICABLE', 'MOTOR VEHICLE STRUCK OBJECT IN ROAD',
@@ -40,6 +41,15 @@ def tab2():
     weather = ['Clear', 'Raining', 'Overcast', 'Unknown', 'Snowing', 'Other', 'Fog/Smog/Smoke', 'Sleet/Hail/Freezing Rain',
                'Blowing Sand/Dirt', 'Severe Crosswind', 'Partly Cloudy', 'Blowing Snow']
     
+    def get_severity(number):
+        severities = {
+      0: "Property Damage Only Collision",
+      1: "Injury Collision",
+      2: "Serious Injury Collision",
+      3: "Fatality Collision"
+  }
+        return severities.get(number[0])
+    
     
 
     feature1 = st.selectbox("Block or Intersection?", block_or_intersection)
@@ -51,22 +61,243 @@ def tab2():
     feature7 = st.number_input("How many people were involved?", value=0, step=1)
     feature8 = st.selectbox("What were the road conditions?", road_conditions)
     feature9 = st.selectbox("Which of these options fits your condition the best?", crash_conditions)
-    feature10 = st.number_input("Crash severity (PLACE HOLDER)?", value=0, step=1)
-    feature11 = st.selectbox("Was anyone under the influence at the time of the accident?", yes_no)
-    feature12 = st.number_input("How many vehicles were involved?", value=0, step=1)
-    feature13 = st.selectbox("What was the weather at the time of the accident?", weather)
-    feature14 = st.selectbox("Was a parked car hit during this accident?", yes_no)
+    feature10 = st.selectbox("Was anyone under the influence at the time of the accident?", yes_no)
+    feature11 = st.number_input("How many vehicles were involved?", value=0, step=1)
+    feature12 = st.selectbox("What was the weather at the time of the accident?", weather)
+    feature13 = st.selectbox("Was a parked car hit during this accident?", yes_no)
 
 
     if st.button("Predict"):
         # Prepare the input features for prediction
-        input_features = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11, feature12, feature13, feature14]
+        input_features = [feature1, feature2, feature3, feature4, feature5, feature6, feature7, feature8, feature9, feature10, feature11, feature12, feature13]
         
+        if feature1 == ('Block'): 
+            empty_df['Address_Type_Block']= empty_df['Address_Type_Block'].replace(0,1)
+
+        if feature1 == ('Intersection'): 
+            empty_df['Address_Type_Intersection']= empty_df['Address_Type_Intersection'].replace(0,1)
+
+        if feature2 == ('Parked Car'): 
+            empty_df['Collision_Type_Parked Car']= empty_df['Collision_Type_Parked Car'].replace(0,1)
+
+        if feature2 == ('Angles'): 
+            empty_df['Collision_Type_Angles']= empty_df['Collision_Type_Angles'].replace(0,1)
+
+        if feature2 == ('Rear Ended'): 
+            empty_df['Collision_Type_Rear Ended']= empty_df['Collision_Type_Rear Ended'].replace(0,1)
+
+        if feature2 == ('Sideswipe'): 
+            empty_df['Collision_Type_Sideswipe']= empty_df['Collision_Type_Sideswipe'].replace(0,1)
+
+        if feature2 == ('Left Turn'): 
+            empty_df['Collision_Type_Left Turn']= empty_df['Collision_Type_Left Turn'].replace(0,1)
+
+        if feature2 == ('Pedestrian'): 
+            empty_df['Collision_Type_Pedestrian']= empty_df['Collision_Type_Pedestrian'].replace(0,1)
+
+        if feature2 == ('Cycle'): 
+            empty_df['Collision_Type_Cycles']= empty_df['Collision_Type_Cycles'].replace(0,1)
+
+        if feature2 == ('Right Turn'): 
+            empty_df['Collision_Type_Right Turn']= empty_df['Collision_Type_Right Turn'].replace(0,1)
+
+        if feature2 == ('Head On'): 
+            empty_df['Collision_Type_Head On']= empty_df['Collision_Type_Head On'].replace(0,1)
+
+        if feature2 == ('Other'): 
+            empty_df['Collision_Type_Other']= empty_df['Collision_Type_Other'].replace(0,1)
+
+        if feature3 == ('Mid-Block (not related to intersection)'): 
+            empty_df['Junction_Type_Mid-Block (not related to intersection)']= empty_df['Junction_Type_Mid-Block (not related to intersection)'].replace(0,1)
+
+        if feature3 == ('At Intersection (intersection related)'): 
+            empty_df['Junction_Type_At Intersection (intersection related)']=empty_df['Junction_Type_At Intersection (intersection related)'].replace(0,1)
+
+        if feature3 == ('Mid-Block (but intersection related)'): 
+            empty_df['Junction_Type_Mid-Block (but intersection related)']=empty_df['Junction_Type_Mid-Block (but intersection related)'].replace(0,1)
+
+        if feature3 == ('Driveway Junction'): 
+            empty_df['Junction_Type_Driveway Junction']=empty_df['Junction_Type_Driveway Junction'].replace(0,1)
+
+        if feature3 == ('At Intersection (but not related to intersection)'): 
+            empty_df['Junction_Type_At Intersection (but not related to intersection)']=empty_df['Junction_Type_At Intersection (but not related to intersection)'].replace(0,1)
+
+        if feature3 == ('Ramp Junction'): 
+            empty_df['Junction_Type_Ramp Junction']=empty_df['Junction_Type_Ramp Junction'].replace(0,1)
+
+        if feature3 == ('Unknown'): 
+            empty_df['Junction_Type_unknown']=empty_df['Junction_Type_unknown'].replace(0,1)
+
+        if feature4 == ('Daylight'): 
+            empty_df['Light_Conditions_Daylight']=empty_df['Light_Conditions_Daylight'].replace(0,1)
+
+        if feature4 == ('Dark'): 
+            empty_df['Light_Conditions_Dark']=empty_df['Light_Conditions_Dark'].replace(0,1)
+
+        if feature4 == ('Dusk'): 
+            empty_df['Light_Conditions_Dusk']=empty_df['Light_Conditions_Dusk'].replace(0,1)
+
+        if feature4 == ('Dawn'): 
+            empty_df['Light_Conditions_Dawn']=empty_df['Light_Conditions_Dawn'].replace(0,1)
+
+        if feature4 == ('Unknown'): 
+            empty_df['Light_Conditions_Unknown']=empty_df['Light_Conditions_Unknown'].replace(0,1)
+
+        if feature4 == ('Other'): 
+            empty_df['Light_Conditions_Other']=empty_df['Light_Conditions_Other'].replace(0,1)
+
+        empty_df['Pedestrian_Count'] = empty_df['Pedestrian_Count'].replace(empty_df['Pedestrian_count'], feature5)
+
+        empty_df['Cyclist_Count'] = empty_df['Cyclist_Count'].replace(empty_df['Cyclist_Count'], feature6)
+
+        empty_df['Person_Count'] = empty_df['Person_Count'].replace(empty_df['Person_Count'], feature7)
+
+        if feature8 == ('Wet'): 
+            empty_df['Road_Condition_Wet']=empty_df['Road_Condition_Wet'].replace(0,1)
+
+        if feature8 == ('Other'): 
+            empty_df['Road_Condition_Other']=empty_df['Road_Condition_Other'].replace(0,1)
+
+        if feature8 == ('Dry'): 
+            empty_df['Road_Condition_Dry']=empty_df['Road_Condition_Dry'].replace(0,1)
+
+        if feature8 == ('Oil'): 
+            empty_df['Road_Condition_Oil']=empty_df['Road_Condition_Oil'].replace(0,1)
+
+        if feature8 == ('Ice'): 
+            empty_df['Road_Condition_Ice']=empty_df['Road_Condition_Ice'].replace(0,1)
+
+        if feature8 == ('Sand/Mud/Dirt'): 
+            empty_df['Road_Condition_Sand/Mud/Dirt']=empty_df['Road_Condition_Sand/Mud/Dirt'].replace(0,1)
+
+        if feature8 == ('Snow/Slush'): 
+            empty_df['Road_Condition_Snow/Slush']=empty_df['Road_Condition_Snow/Slush'].replace(0,1)
+
+        if feature8 == ('Standing Water'): 
+            empty_df['Road_Condition_Standing Water']=empty_df['Road_Condition_Standing Water'].replace(0,1)
+
+        if feature8 == ('Unknown'): 
+            empty_df['Road_Condition_Unknown']=empty_df['Road_Condition_Unknown'].replace(0,1)
+
+        if feature9 == ('MOTOR VEHICLE STRUCK MOTOR VEHICLE'): 
+            empty_df['Collision_Description_MOTOR VEHICLE STRUCK MOTOR VEHICLE']=empty_df['Collision_Description_MOTOR VEHICLE STRUCK MOTOR VEHICLE'].replace(0,1)
+
+        if feature9 == ('MOTOR VEHICLE RAN OFF ROAD'): 
+            empty_df['Collision_Description_MOTOR VEHICLE RAN OFF ROAD']=empty_df['Collision_Description_MOTOR VEHICLE RAN OFF ROAD'].replace(0,1)
+
+        if feature9 == ('MOTOR VEHICLE STRUCK PEDESTRIAN'): 
+            empty_df['Collision_Description_MOTOR VEHCILE STRUCK PEDESTRIAN']=empty_df['Collision_Description_MOTOR VEHCILE STRUCK PEDESTRIAN'].replace(0,1)
+
+        if feature9 == ('NOT ENOUGH INFORMATION / NOT APPLICABLE'): 
+            empty_df['Collision_Description_NOT ENOUGH INFORMATION / NOT APPLICABLE']=empty_df['Collision_Description_NOT ENOUGH INFORMATION / NOT APPLICABLE'].replace(0,1)
+        
+        if feature9 == ('MOTOR VEHICLE STRUCK OBJECT IN ROAD'): 
+            empty_df['Collision_Description_MOTOR VEHICLE STRUCK OBJECT IN ROAD']=empty_df['Collision_Description_MOTOR VEHICLE STRUCK OBJECT IN ROAD'].replace(0,1)
+
+        if feature9 == ('MOTOR VEHICLE STRUCK PEDALCYCLIST'): 
+            empty_df['Collision_Description_MOTOR VEHICLE STRUCK PEDALCYCLIST']=empty_df['Collision_Description_MOTOR VEHICLE STRUCK PEDALCYCLIST'].replace(0,1)
+       
+        if feature9 == ('PEDALCYCLIST STRUCK MOTOR VEHICLE'): 
+            empty_df['Collision_Description_PEDALCYCLIST STRUCK MOTOR VEHICLE']=empty_df['Collision_Description_PEDALCYCLIST STRUCK MOTOR VEHICLE'].replace(0,1)
+        
+        if feature9 == ('MOTOR VEHICLE OVERTURNED IN ROAD'): 
+            empty_df['Collision_Description_MOTOR VEHICLE OVERTURNED IN ROAD']=empty_df['Collision_Description_MOTOR VEHICLE OVERTURNED IN ROAD'].replace(0,1)
+
+        if feature9 == ('DRIVERLESS VEHICLE STRUCK MOTOR VEHICLE'): 
+            empty_df['Collision_Description_DRIVERLESS VEHICLE STRUCK MOTOR VEHICLE']=empty_df['Collision_Description_DRIVERLESS VEHICLE STRUCK MOTOR VEHICLE'].replace(0,1)
+ 
+        if feature9 == ('DRIVERLESS VEHICLE RAN OFF ROAD'): 
+            empty_df['Collision_Description_DRIVERLESS VEHICLE RAN OFF ROAD']=empty_df['Collision_Description_DRIVERLESS VEHICLE RAN OFF ROAD'].replace(0,1)
+
+        if feature9 == ('MOTOR VEHICLE STRUCK TRAIN'): 
+            empty_df['Collision_Description_MOTOR VEHICLE STRUCK TRAIN']=empty_df['Collision_Description_MOTOR VEHICLE STRUCK TRAIN'].replace(0,1)
+
+        if feature9 == ('PEDALCYCLIST STRUCK PEDESTRIAN'): 
+            empty_df['Collision_Description_PEDALCYCLIST STRUCK PEDESTRIAN']=empty_df['Collision_Description_PEDALCYCLIST STRUCK PEDESTRIAN'].replace(0,1)
+
+        if feature9 == ('PEDALCYCLIST OVERTURNED IN ROAD'): 
+            empty_df['Collision_Description_PEDALCYCLIST OVERTURNED IN ROAD']=empty_df['Collision_Description_PEDALCYCLIST OVERTURNED IN ROAD'].replace(0,1)
+
+        if feature9 == ('PEDALCYCLIST STRUCK OBJECT IN ROAD'): 
+            empty_df['Collision_Description_PEDALCYCLIST STRUCK OBJECT IN ROAD']=empty_df['Collision_Description_PEDALCYCLIST STRUCK OBJECT IN ROAD'].replace(0,1)
+
+        if feature9 == ('DRIVERLESS VEHICLE STRUCK PEDESTRIAN'): 
+            empty_df['Collision_Description_DRIVERLESS VEHICLE STRUCK PEDESTRIAN']=empty_df['Collision_Description_DRIVERLESS VEHICLE STRUCK PEDESTRIAN'].replace(0,1)
+
+        if feature9 == ('PEDALCYCLIST STRUCK PEDALCYCLIST REAR END'): 
+            empty_df['Collision_Description_PEDALCYCLIST STRUCK PEDALCYCLIST REAR END']=empty_df['Collision_Description_PEDALCYCLIST STRUCK PEDALCYCLIST REAR END'].replace(0,1)
+
+        if feature9 == ('PEDALCYCLIST STRUCK PEDALCYCLIST FRONT END AT ANGLE'): 
+            empty_df['Collision_Description_PEDALCYCLIST STRUCK PEDALCYCLIST FRONT END AT ANGLE']=empty_df['Collision_Description_PEDALCYCLIST STRUCK PEDALCYCLIST FRONT END AT ANGLE'].replace(0,1)
+
+        if feature9 == ('PEDALCYCLIST RAN OFF ROAD - HIT FIXED OBJECT'): 
+            empty_df['Collision_Description_PEDALCYCLIST RAN OFF ROAD - HIT FIXED OBJECT']=empty_df['Collision_Description_PEDALCYCLIST RAN OFF ROAD - HIT FIXED OBJECT'].replace(0,1)
+
+        if feature9 == ('DRIVERLESS VEHICLE STRUCK OBJECT IN ROADWAY'): 
+            empty_df['Collision_Description_DRIVERLESS VEHICLE STRUCK OBJECT IN ROADWAY']=empty_df['Collision_Description_DRIVERLESS VEHICLE STRUCK OBJECT IN ROADWAY'].replace(0,1)
+
+        if feature9 == ('MOTORIZED SCOOTER COLLISION: COLLISION INVOLVING A MOTORIZED SCOOTER'): 
+            empty_df['Collision_Description_MOTORIZED SCOOTER COLLISION: COLLISION INVOLVING A MOTORIZED SCOOTER']=empty_df['Collision_Description_MOTORIZED SCOOTER COLLISION: COLLISION INVOLVING A MOTORIZED SCOOTER'].replace(0,1)
+
+        if feature10 == ('Y'): 
+            empty_df['Under_The_Influence']=empty_df['Under_The_Influence'].replace(0,1)
+
+        if feature10 == ('N'): 
+            empty_df['Under_The_Influence']=empty_df['Under_The_Influence'].replace(0,1)
+
+        empty_df['Vehicle_Count'] = empty_df['Vehicle_Count'].replace(empty_df['Vehicle_Count'], feature11) 
+
+        if feature12 == ('Clear'): 
+            empty_df['Weather_Clear']=empty_df['Weather_Clear'].replace(0,1)
+
+        if feature12 == ('Blowing Sand/Dirt'): 
+            empty_df['Weather_Blowing Sand/Dirt']=empty_df['Weather_Clear'].replace(0,1)
+
+        if feature12 == ('Blowing Snow'): 
+            empty_df['Weather_Blowing Snow']=empty_df['Weather_Blowing Snow'].replace(0,1)
+
+        if feature12 == ('Fog/Smog/Smoke'): 
+            empty_df['Weather_Fog/Smog/Smoke']=empty_df['Weather_Fog/Smog/Smoke'].replace(0,1)
+
+        if feature12 == ('Other'): 
+            empty_df['Weather_Other']=empty_df['Weather_Other'].replace(0,1)
+
+        if feature12 == ('Overcast'): 
+            empty_df['Weather_Overcast']=empty_df['Weather_Overcast'].replace(0,1)
+
+        if feature12 == ('Partly Cloudy'): 
+            empty_df['Weather_Partly Cloudy']=empty_df['Weather_Partly Cloudy'].replace(0,1)
+
+        if feature12 == ('Raining'): 
+            empty_df['Weather_Raining']=empty_df['Weather_Raining'].replace(0,1)
+
+        if feature12 == ('Severe Crosswind'): 
+            empty_df['Weather_Severe Crosswind']=empty_df['Weather_Severe Crosswind'].replace(0,1)
+
+        if feature12 == ('Sleet/Hail/Freezing Rain'): 
+            empty_df['Weather_Sleet/Hail/Freezing Rain']=empty_df['Weather_Sleet/Hail/Freezing Rain'].replace(0,1)
+
+        if feature12 == ('Snow'): 
+            empty_df['Weather_Snowing']=empty_df['Weather_Snowing'].replace(0,1)
+
+        if feature12 == ('Unknown'): 
+            empty_df['Weather_Unknown']=empty_df['Weather_Unknown'].replace(0,1)
+
+        if feature13 == ('Y'): 
+            empty_df['Hit_Parked_Car']=empty_df['Hit_Parked_Car'].replace(0,1)
+
+        if feature13 == ('N'): 
+            empty_df['Hit_Parked_Car']=empty_df['Hit_Parked_Car'].replace(0,1)
+
+        
+        
+
+
         # Perform prediction using the loaded model
-        prediction = model.predict([input_features])[0]
+        prediction = model.predict(empty_df)
 
         # Display the prediction result
-        st.write("Prediction:", prediction)
+        st.write("Crash Severity:", get_severity(prediction))
 
 def tab3():
     st.title("Map")
