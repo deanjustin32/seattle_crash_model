@@ -13,17 +13,15 @@ def tab1():
     st.components.v1.html(open("base.HTML", 'r').read(), width=1000, height=10000)
 
 def tab2():
+    current_directory = os.getcwd()
+    print("Current Directory:", current_directory)
+
+    files_in_directory = os.listdir(current_directory)
+    print("Files in Directory:", files_in_directory)
+
+
     st.title("Accident Severity Based on Collision Factors")
 
-model_file = st.file_uploader("Upload Model File", type="pkl")
-
-# Check if a file was uploaded
-if model_file is not None:
-    # Load the model from the uploaded file
-    model = pickle.load(model_file)
-    st.write("Model successfully loaded.")
-else:
-    st.write("Please upload a model file.")
     
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
     model = pickle.load(open("xgb_model_2.pkl", 'rb'))
