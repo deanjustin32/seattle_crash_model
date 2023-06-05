@@ -15,6 +15,16 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
+# Upload the model file
+model_file = st.file_uploader("xgb_model_2.pkl", type="pkl")
+
+# Check if a file was uploaded
+if model_file is not None:
+    # Load the model from the uploaded file
+    model = pickle.load(model_file)
+    st.write("Model successfully loaded.")
+else:
+    st.write("Please upload a model file.")
     
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
     model = pickle.load(open("xgb_model_2.pkl", 'rb'))
