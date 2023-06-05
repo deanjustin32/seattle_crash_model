@@ -4,4 +4,5 @@ python==3.7.7
 xgboost==1.6.2
 streamlit==1.23.1
 include empty_df_2_1.pkl
-include xgb_model_2.pkl 
+include xgb_model_2.pkl
+

@@ -15,7 +15,7 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
-    model_path = os.path.join(os.getcwd(), "xgb_model_2.pkl")
+    model_path = os.path.join(os.getcwd(), "seattle_crash_model", "xgb_model_2.pkl")
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
     model = pickle.load(open(model_path, 'rb'))
 
