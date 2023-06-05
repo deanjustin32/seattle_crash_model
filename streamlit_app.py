@@ -15,7 +15,7 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
-model_file = st.file_uploader("xgb_model_2.pkl", type="pkl")
+model_file = st.file_uploader("Upload Model File", type="pkl")
 
 # Check if a file was uploaded
 if model_file is not None:
