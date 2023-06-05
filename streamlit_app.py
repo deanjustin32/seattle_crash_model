@@ -1,6 +1,6 @@
 import streamlit as st
 import pickle
-import joblib
+# import joblib
 import pandas as pd
 
 def tab1():
