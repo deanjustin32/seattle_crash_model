@@ -14,6 +14,9 @@ Explore the app! Take a look at our Map, which displays crashes and the serviret
 
 ## Explore the [Seattle Crash Survival App here](https://seattlecrashmodel.streamlit.app/)
 
+## Crash Prediction Tool
+This tool was developed to predict the severity level of injury to crashes that occur in Seattle, WA. By answering the promts within the form, the user will recieve a prediction of crash severity level based on the properties of the crash, road and weather codition, and vehicles involved.
+
 ![Prediction tool](https://github.com/deanjustin32/seattle_crash_model/blob/main/images/Prediction_tool.png)
 
 # Data
