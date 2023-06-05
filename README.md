@@ -12,15 +12,15 @@ Our group developed an app that predicts the degree of injury based on the condi
 
 Explore the app! Take a look at our Map, which displays crashes and the servirety of these crashes throughout Seattle, WA. View the data through graphs and visualizations to see patterns, powered by Tableau Public. Try out our Crash Survivability Prediction Tool, created using Machine Learning. 
 
+# Data
+Data used to develope the Machine Learning model and Tableau Public graphs is hosted by the City of Seattle. For more information, visit Seattle SDOT Collisions Data here https://www.kaggle.com/datasets/jonleon/seattle-sdot-collisions-data.
+
 ## Explore the [Seattle Crash Survival App here](https://seattlecrashmodel.streamlit.app/)
 
 ## Crash Prediction Tool
 This tool was developed to predict the severity level of injury to crashes that occur in Seattle, WA. By answering the promts within the form, the user will recieve a prediction of crash severity level based on the properties of the crash, road and weather codition, and vehicles involved.
 
 ![Prediction tool](https://github.com/deanjustin32/seattle_crash_model/blob/main/images/Prediction_tool.png)
-
-# Data
-Data used to develope the Machine Learning model and Tableau Public graphs is hosted by the City of Seattle. For more information, visit Seattle SDOT Collisions Data here https://www.kaggle.com/datasets/jonleon/seattle-sdot-collisions-data.
 
 # Map
 The map was created by data sourced from Seattle-sdot-collisions and was developed through Tableau Public. It displays collision injuries per vehicle accident that occured in Seattle, WA. The different colored dots represent the number of injuries that occur during an accident. Note that the most common number of injuries per accident is 5 - 7 injuries.
