@@ -14,6 +14,8 @@ Explore the app! Take a look at our Map, which displays crashes and the serviret
 
 ## Explore the [Seattle Crash Survival App here](https://seattlecrashmodel.streamlit.app/)
 
+![Prediction tool](https://github.com/deanjustin32/seattle_crash_model/blob/main/images/Prediction_tool.png)
+
 # Data
 Data used to develope the Machine Learning model and Tableau Public graphs is hosted by the City of Seattle. For more information, visit Seattle SDOT Collisions Data here https://www.kaggle.com/datasets/jonleon/seattle-sdot-collisions-data.
 
