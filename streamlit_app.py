@@ -13,11 +13,22 @@ def tab1():
     st.components.v1.html(open("base.HTML", 'r').read(), width=1000, height=10000)
 
 def tab2():
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Specify the relative path to the pickle file
+    pickle_file_path = os.path.join(current_dir, "xgb_model_2.pkl")
+
+# Load the pickle file
+    with open(pickle_file_path, 'rb') as file:
+        model = pickle.load(file)
+
+
     st.title("Accident Severity Based on Collision Factors")
 
     
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
-    model = pickle.load(open("xgb_model_2.pkl", 'rb'))
+    # model = pickle.load(open("xgb_model_2.pkl", 'rb'))
 
     st.write("Accident Conditions:")
 
