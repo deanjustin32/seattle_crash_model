@@ -1,8 +1,8 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import os
-import joblib
+
+
 
 
 
@@ -16,7 +16,7 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
-    model = joblib.load("xgb_model_joblib.joblib")
+    
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
     # model = pickle.load(open("xgb_model_2.pkl", 'rb'))
 
