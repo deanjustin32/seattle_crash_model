@@ -14,10 +14,10 @@ def tab1():
 
 def tab2():
     current_directory = os.getcwd()
-    print("Current Directory:", current_directory)
+    st.write("Current Directory:", current_directory)
 
     files_in_directory = os.listdir(current_directory)
-    print("Files in Directory:", files_in_directory)
+    st.write("Files in Directory:", files_in_directory)
 
 
     st.title("Accident Severity Based on Collision Factors")
