@@ -13,13 +13,6 @@ def tab1():
     st.components.v1.html(open("base.HTML", 'r').read(), width=1000, height=10000)
 
 def tab2():
-    current_directory = os.getcwd()
-    st.write("Current Directory:", current_directory)
-
-    files_in_directory = os.listdir(current_directory)
-    st.write("Files in Directory:", files_in_directory)
-
-
     st.title("Accident Severity Based on Collision Factors")
 
     
