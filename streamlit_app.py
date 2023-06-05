@@ -13,8 +13,8 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
-    empty_df = pd.read_pickle("seattle_crash_model/empty_df_2_1.pkl")
-    model = pickle.load(open("seattle_crash_model/xgb_model_2.pkl", 'rb'))
+    empty_df = pd.read_pickle("empty_df_2_1.pkl")
+    model = pickle.load(open("xgb_model_2.pkl", 'rb'))
 
     st.write("Accident Conditions:")
 
