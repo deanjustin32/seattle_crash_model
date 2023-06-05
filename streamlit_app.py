@@ -310,7 +310,7 @@ def tab4():
 
 def tab5():
     st.title("The Dream Team")
-    st.components.v1.html(open("team.html", 'r').read(), width=1000, height=10000)
+    st.components.v1.html(open("team.html", 'r', encoding='utf-8').read(), width=1000, height=10000)
 
 # Main app
 def main():
