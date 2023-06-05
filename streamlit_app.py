@@ -2,6 +2,10 @@ import streamlit as st
 import pickle
 import pandas as pd
 
+import sklearn
+
+print(sklearn.__version__)
+
 def tab1():
     st.title("Home")
     st.components.v1.html(open("base.HTML", 'r').read(), width=1000, height=10000)
