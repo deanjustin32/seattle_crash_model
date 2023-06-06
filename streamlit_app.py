@@ -18,7 +18,7 @@ def tab2():
 
     
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
-    model = pickle.load(open("xgb_model_2.pkl", 'rb'))
+    model = pickle.load(open("https://github.com/deanjustin32/seattle_crash_model/blob/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl", 'rb'))
 
     st.write("Accident Conditions:")
 
