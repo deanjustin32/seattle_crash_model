@@ -1,7 +1,7 @@
 # Project 4 Proposal - Crash Survival Prediction in Seattle, Washington
 ## University of California, Davis - Data Analyst Bootcamp
 ## Group Members: 
-Justin Dean</br>Madeline Gutieuriz</br>Belay Kondidie</br>Riley Unverferth
+Justin Dean</br>Madeline Gutieruiz</br>Belay Kondidie</br>Riley Unverferth
 
 # Note to Viewer
 The app can be viewed in-part at https://seattle-crash-model.streamlit.app/
