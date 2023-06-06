@@ -298,15 +298,15 @@ def tab2():
 
 def tab3():
     st.title("Map")
-    st.components.v1.html(open("map.html", 'r').read(), width=1000, height=10000)
+    st.components.v1.html(open("HTML_files/map.html", 'r').read(), width=1000, height=10000)
 
 def tab4():
     st.title("Graphs")
-    st.components.v1.html(open("graphs.HTML", 'r').read(), width=1300, height=10000)
+    st.components.v1.html(open("HTML_files/graphs.HTML", 'r').read(), width=1300, height=10000)
 
 def tab5():
     st.title("The Dream Team")
-    st.components.v1.html(open("team.html", 'r', encoding='utf-8').read(), width=1000, height=10000)
+    st.components.v1.html(open("HTML_files/team.html", 'r', encoding='utf-8').read(), width=1000, height=10000)
 
 # Main app
 def main():
