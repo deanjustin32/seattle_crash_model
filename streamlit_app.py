@@ -1,8 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import urllib.request
-import os
+
 
 
 
@@ -16,28 +15,9 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
-    url = "https://github.com/deanjustin32/seattle_crash_model/raw/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl"
-    local_file_path = "/path/to/xgb_model_2.pkl"
-
-    directory = os.path.dirname(local_file_path)
-    os.makedirs(directory, exist_ok=True)
-
-    try:
-        urllib.request.urlretrieve(url, local_file_path)
-    except Exception as e:
-        print(f"An error occurred while downloading the file: {e}")
-    # Handle the error accordingly
-
-    try:
-        with open(local_file_path, 'rb') as file:
-            model = pickle.load(file)
-    except Exception as e:
-        print(f"An error occurred while loading the pickle file: {e}")
-    # Handle the error accordingly
-
-
+    
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
-    # model = pickle.load(open("https://github.com/deanjustin32/seattle_crash_model/blob/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl", 'rb'))
+    model = pickle.load(open("xgb_model.pkl", 'rb'))
 
     st.write("Accident Conditions:")
 
