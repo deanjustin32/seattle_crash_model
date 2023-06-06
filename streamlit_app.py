@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import requests
+import urllib.request
 
 
 
@@ -18,8 +18,8 @@ def tab2():
 
     url = "https://github.com/deanjustin32/seattle_crash_model/raw/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl"
 
-    response = requests.get(url)
-    model = pickle.loads(response.content)
+    response = urllib.request.urlopen(url)
+    model = pickle.load(response)
 
 
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
