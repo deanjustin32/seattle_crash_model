@@ -1,13 +1,14 @@
 # Project 4 Proposal - Crash Survival Prediction in Seattle, Washington
 ## University of California, Davis - Data Analyst Bootcamp
-## Group members: Justin Dean, Madeline Gutieuriz, Belay Kondidie, and Riley Unverferth
+## Group Members: 
+Justin Dean</br>Madeline Gutieuriz</br>Belay Kondidie</br>Riley Unverferth
 
-# Note to viewer
+# Note to Viewer
 The app can be viewed in-part at https://seattle-crash-model.streamlit.app/
 - The ML model cannot be run on streamlit as there is a Streamlit limitation to loading the pkl file
   - To run the full model please clone the repo to your local machine and enter $ streamlit run streamlit_app.py in CMD prompt
   - Please note you will need to have the appropriate dependencies in the requirments.txt file installed in the appropriate enviornment
-  - For qestions on running this app please email Justin Dean at deanjustin32@gmail.com
+  - For questions on running this app please email Justin Dean at deanjustin32@gmail.com
  - Thanks for viewing!!
 
 # Background 
