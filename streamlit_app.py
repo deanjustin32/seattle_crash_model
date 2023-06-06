@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
-
+import requests
 
 
 
@@ -16,9 +16,14 @@ def tab1():
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
-    
+    url = "https://github.com/deanjustin32/seattle_crash_model/raw/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl"
+
+    response = requests.get(url)
+    model = pickle.loads(response.content)
+
+
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
-    model = pickle.load(open("https://github.com/deanjustin32/seattle_crash_model/blob/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl", 'rb'))
+    # model = pickle.load(open("https://github.com/deanjustin32/seattle_crash_model/blob/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl", 'rb'))
 
     st.write("Accident Conditions:")
 
