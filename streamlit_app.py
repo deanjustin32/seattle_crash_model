@@ -17,9 +17,12 @@ def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
     url = "https://github.com/deanjustin32/seattle_crash_model/raw/4b1fe51c6d6a8230410ed87d67fe3c91b4e7cf3c/xgb_model_2.pkl"
+    local_file_path = "/path/to/xgb_model_2.pkl"
 
-    with urllib.request.urlopen(url) as response:
-        model = pickle.load(response)
+    urllib.request.urlretrieve(url, local_file_path)
+
+    with open(local_file_path, 'rb') as file:
+        model = pickle.load(file)
 
 
     empty_df = pd.read_pickle("empty_df_2_1.pkl")
