@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seattle Crash Assessment</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        body {
+          background-color: #ffffff;
+        }
+  
+        .jumbotron {
+          background: #6615d100 linear-gradient(#4a97df, #ccf7ff);
+          background-size: 100% 100%;
+          overflow: auto;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+    </style>
+
+<style>
+    .container {
+      background-color: #ccf7ff;
+    }
+  </style>
+
+  </head>
+
+  <body>
+    <!--Jumbotron and GIF-->
+    <div class="container">
+        <div class="jumbotron" style="text-align: center;">
+            <h1 style="font-size: 40px; color: white; font-family: Gill Sans, sans-serif;" > Probability of Crash Survival in Seattle, WA.</h1>
+          <div style="max-width: 600px; margin: 0 auto;">
+            <img src="https://marvel-b1-cdn.bc0a.com/f00000000103807/www.cityyear.org/wp-content/uploads/2020/04/cityscapesCYFullNewColors_SeattleCityscape.png" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+          </div>
+        </div>
+      </div>
+
+    <!--Tabs on the website using materialize-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <div class="container">
+        <div class="row">
+          <div class="col s12">
+            
+             <!-- Tabs -->
+            <!-- <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/base.HTML">Home</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/tool.HTML">Prediction Tool</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/map.html">Map</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/graphs.HTML">Graphs</a></li>
+              <li class="tab"><a target="_self" style="background-color: #ffa51eb6; color: rgb(0, 0, 0)" href="../static/team.html">Team</a></li>
+            </ul>
+          </div>
+        </div> -->
+
+  <!--Body Text/ Paragraphs-->
+  <div>
+    <h1>Meet our Team</h1>
+    <p id="myParagraph" class="intro-text" style="font-size: 18px;"> Meet the talented team behind the development of the Crash Survival Prediction application! Comprised of UC Davis' Data Analytics Bootcamp graduates, they are the driving force behind its creation. Let's get acquainted with the brilliant minds that brought this app to life: Justin Dean, Madeline Gutieruiz, Belay Kondidie, and Riley Unverferth.</p>
+    <p> 
+    
+      <h3>Justin Dean</h3>
+        <img src="https://raw.githubusercontent.com/deanjustin32/seattle_crash_model/main/images/JDean.JPG" alt="Description of the image" width="230" height="200"> 
+        <p id="myParagraph" class="intro-text" style="font-size: 18px;"> Justin Dean is a dynamic and versatile professional with a strong educational background. Holding an MBA, a Bachelor's of Science in Business, and a General Management certification from the University of Phoenix, Justin brings a wealth of knowledge and expertise to his role as a project manager/database manager at Keysight Technologies.
+
+          In his current position, Justin thrives on the challenges presented by complex datasets and constantly changing variables. His analytical skills and attention to detail allow him to effectively manage and manipulate data, ensuring accurate and insightful analysis. Justin's can-do attitude and proactive approach make him a valuable asset to his team.
+          
+          Outside of his professional pursuits, Justin has a fun and adventurous side. He enjoys taking long walks on the beach, appreciating the beauty of nature, and indulging in refreshing drinks like pina coladas. His vibrant personality and positive outlook on life make him a joy to be around.
+          
+          Justin Dean is a cucumber cool guy who combines his passion for data management with a zest for life. With his impressive educational background and dedication to excellence, he continues to make significant contributions in his professional field while embracing the pleasures and adventures life has to offer</p>
+        
+        <p>Where are they now? Check out <a href="https://www.linkedin.com/in/deanjustinr/" target="_blank">Justin's achivements</a> for more information.</p>
+    
+      <h3>Madeline Gutieuriz</h3>
+        <img src="https://raw.githubusercontent.com/deanjustin32/seattle_crash_model/main/images/MGutieruiz.jpg" alt="Description of the image" width="230" height="200">   
+        <p id="myParagraph" class="intro-text" style="font-size: 18px;"> Madeline Gutieruiz is a graduate from the University of California, Merced, with a Bachelor of Science degree in Earth System Science. Madeline currently works with the U.S. Environmental Protection Agency as an Environmental Protection Specialist. With a passion for environmental science and sustainable practices, she aspires to pursue graduate studies in Environmental Engineering. Her goal is to develop innovative solutions that address environmental challenges and contribute to a greener, more sustainable future. </p>
+        
+        <p>Where are they now? Check out <a href="https://www.linkedin.com/in/madeline-castro-gutieruiz-625964116/" target="_blank">Madeline's achivements</a> for more information.</p>
+    
+    <h3>Belay Kondidie</h3>
+        <img src="https://raw.githubusercontent.com/deanjustin32/seattle_crash_model/main/images/BKondidie.jpg" alt="Description of the image" width="230" height="200">
+        <p id="myParagraph" class="intro-text" style="font-size: 18px;"> Difabachew “Belay” Kondidie is a highly motivated and results-driven scientist with a passion for technology and innovation. With strong research, data analysis, and project management, he has successfully led cross-functional teams and delivered complex projects with exceptional quality and timeliness. He thrives in collaborative environments, fostering strong relationships with stakeholders, team members, and clients alike. His ability to translate complex technical concepts into layman's terms makes him an effective communicator across all levels of an organization. Belay Holds a PhD degree in Entomology focusing on molecular genetics from University of Nebraska, Lincoln.</p>
+
+        <p>Where are they now? Check out <a href="https://www.linkedin.com/in/difabachew-belay-8796b222 " target="_blank">Belay's achivements</a> for more information.</p>
+    
+      <h3>Riley Unverferth</h3> 
+        <img src="https://raw.githubusercontent.com/deanjustin32/seattle_crash_model/main/images/RUnverferth.JPG" alt="Description of the image" width="230" height="200">   
+        <p id="myParagraph" class="intro-text" style="font-size: 18px;"> Riley Unverferth is a versatile professional who holds a Bachelor of Arts degree in Music Industry from CSU, Chico, complemented by a minor in Business Administration. Currently serving as a Warehouse Supervisor, Riley has developed strong organizational and leadership skills. With a passion for data science, they aspire to transition into this field, leveraging their diverse background and analytical abilities to excel in their future career.</p>
+        
+        <p>Where are they now? Check out <a href="https://www.linkedin.com/in/riley-unverferth/" target="_blank">Riley's achivements</a> for more information.</p>
+      
+    </p>
+    
+
+</div>
+</body>
+</html>

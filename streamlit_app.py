@@ -4,7 +4,7 @@ import pandas as pd
 
 def tab1():
     st.title("Home")
-    st.components.v1.html(open("base.HTML", 'r').read(), width=1000, height=10000)
+    st.components.v1.html(open("HTML_files/base.HTML", 'r').read(), width=1000, height=10000)
 
 def tab2():
     st.title("Accident Severity Based on Collision Factors")
