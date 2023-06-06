@@ -2,12 +2,6 @@ import streamlit as st
 import pickle
 import pandas as pd
 
-
-
-
-
-
-
 def tab1():
     st.title("Home")
     st.components.v1.html(open("base.HTML", 'r').read(), width=1000, height=10000)
@@ -16,8 +10,8 @@ def tab2():
     st.title("Accident Severity Based on Collision Factors")
 
     
-    empty_df = pd.read_pickle("empty_df_2_1.pkl")
-    model = pickle.load(open("xgb_model_2.pkl", 'rb'))
+    empty_df = pd.read_pickle("empty_df.pkl")
+    model = pickle.load(open("xgb_model.pkl", 'rb'))
 
     st.write("Accident Conditions:")
 
@@ -294,8 +288,6 @@ def tab2():
         if feature13 == ('N'): 
             empty_df['Hit_Parked_Car']=1
 
-        
-        
 
 
         # Perform prediction using the loaded model
